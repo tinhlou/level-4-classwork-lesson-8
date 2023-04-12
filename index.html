@@ -42,43 +42,61 @@
     </main>
     <script>
         //Exercise 1 - create an array of your 6 favorite things
-        
+        let myFav = ['Crotchet', 'Playing Valorant', 'Family', 'Working', 'Mangos', 'Drawing'];
 
         //Exercise 2 - show your most favorite thing on the page
         let myFavorite = document.getElementById('my-favorite');//selects the tag
-        myFavorite.innerHTML;//adds content inside the tag
+        myFavorite.innerHTML = `<li>${myFavorite['Crotchet']}</li>`;//adds content inside the tag
 
         //Exercise 3 - change your favorite thing and show it on the page
-        
-        myFavorite.innerHTML;
+        myFav[5] = 'Snacks'
+        myFavorite.innerHTML = `<li>${myFav[5]}</li>`;
 
         //Exercise 4 - Use the length property to show the number of items in your array
         let total = document.getElementById('total');
         
-        total.innerHTML;
+        total.innerHTML = myFav.length;
 
         //Exercise 5 - iterate through the array and show it on the page using the forEach() method.
         let myList = document.getElementById('all-favorites');
-        
-
-        myList.innerHTML;
+        function displayArray(list){
+            return `<li>${list}</li>`;
+        }
+        myList.innerHTML = displayArray(myFav);
 
         //Exercise 6 Concatenation of arrays
         let more = document.getElementById('more-favorites');
 
-        more.innerHTML;
-
+        newArray = [];
+        let newFav = ['Boba', 'Travel', 'Organizing'];
+        let combinedArray = myFav.concat(newFav);
+    
+        more.innerHTML = combinedArray.map(displayArray).join('');
         //Exercise 7 push a new item to your array
         let pushed = document.getElementById('favorites-plus-one');
-
-        pushed.innerHTML;
+        myFav.push('Reading');
+    
+        pushed.innerHTML = displayArray(myFav);
 
        //Exercise 8 push a new item to your array
        
         let popped = document.getElementById('favorites-minus-one');
         popped.innerHTML;
 
+        myFav.pop('Reading');
+
+        popped.innerHTML = displayArray(myFav);
         //Exercises 9-12, practice slice(), shift(), unshift() in arrays.js
+        // let sliceArray = myFav.slice(0, 4);
+        // console.log(slicedArray);
+
+        // let shiftedElement = myFav.shift();
+        // console.log(shiftedElement);
+        
+
+        // let newArray = myFav.unshift('Shoes');
+        // console.log(newArray);
+
     </script>
 
 </body>
