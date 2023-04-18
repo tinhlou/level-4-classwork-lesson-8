@@ -64,6 +64,10 @@
         }
         myList.innerHTML = displayArray(myFav);
 
+        myFav.forEach(function (item) {
+        myList.innerHTML += displayArray(item);
+        });
+
         //Exercise 6 Concatenation of arrays
         let more = document.getElementById('more-favorites');
 
@@ -87,15 +91,32 @@
 
         popped.innerHTML = displayArray(myFav);
         //Exercises 9-12, practice slice(), shift(), unshift() in arrays.js
+
         // let sliceArray = myFav.slice(0, 4);
+
         // console.log(slicedArray);
 
         // let shiftedElement = myFav.shift();
+
         // console.log(shiftedElement);
         
 
         // let newArray = myFav.unshift('Shoes');
+
         // console.log(newArray);
+
+        //Nested Arrays
+        let myFruits= [  
+        ['tomatoes', 'garlic', 'onion'],
+        ['mangos', 'orange', 'apples'],
+        ['gardening', 'crotchet', 'valorant']
+        ];
+        for (let i = 0; i < myFruits.length; i++) {
+            for (let j = 0; j < myFruits[i].length; j++) {
+                console.log(myFruits[i][j]);
+            }
+        }
+
 
     </script>
 
